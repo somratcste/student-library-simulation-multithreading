@@ -14,7 +14,8 @@ public class Book {
     }
 
     public void read(Student student) throws InterruptedException {
-        // it tries to read books if it doesn't then the thread is going to disable
+        // if the lock is not available then the current thread becomes disable
+        // after disable it does not go further execution
         lock.lock();
         System.out.println(student + " starts reading " + this);
 
